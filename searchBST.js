@@ -12,14 +12,14 @@
  * @return {TreeNode}
  */
 var searchBST = function(root, val) {
-    if (root == null)
+    if (!root)
         return null;
     if (root.val === val)
         return root;
     else {
-        if (root.left != null)
+        if (!root.left)
            var left = searchBST(root.left, val);
-        if(root.right != null)
+        if(!root.right)
             var right = searchBST(root.right, val);
         if (!left && !right)
             return null;
