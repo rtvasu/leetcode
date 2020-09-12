@@ -12,11 +12,13 @@
  * @return {TreeNode}
  */
 var mergeTrees = function(t1, t2) {
+    // cases for recursive calls
     if (!t1 && !t2)
         return null;
     if (!t1 || !t2)
         return (t1? t1 : t2);
     
+    //recursive calls
     let left = mergeTrees(t1.left, t2.left);
     let right = mergeTrees(t1.right, t2.right);
     let result = new TreeNode(t1.val + t2.val, left, right);
